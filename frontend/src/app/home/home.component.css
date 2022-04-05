@@ -1,0 +1,25 @@
+.card {
+  max-width: 400px;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+}
+
+.center-content{
+  text-align: -webkit-center;
+}
+
+.imagem{
+  max-width: 50px;
+}
+
+.full-width {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.button{
+  width: 100%;
+}
