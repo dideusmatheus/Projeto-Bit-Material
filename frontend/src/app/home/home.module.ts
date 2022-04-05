@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatCardModule,
     MatTabsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
 
   ],
   exports: [
