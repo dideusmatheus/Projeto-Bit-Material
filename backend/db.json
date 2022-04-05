@@ -1,0 +1,18 @@
+{
+    "usuarios":[
+        {
+            "userName": "Matheus Rocha",
+            "userNick": "matheus",
+            "userEmail": "matheus@bit.com",
+            "userPassword": "123",
+            "id": "1"
+        },
+        {
+            "userName": "Carlos Rocha",
+            "userNick": "carlinhos",
+            "userEmail": "carlos@bit.com",
+            "userPassword": "123",
+            "id": "2"
+        }
+    ]
+}
