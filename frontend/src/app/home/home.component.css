@@ -1,5 +1,11 @@
+body{
+  width: 100vw;
+  height: 100vh;
+}
+
 .card {
   max-width: 400px;
+  background-color: #B4B3E3;
 }
 
 .title{
@@ -7,12 +13,9 @@
   justify-content: center;
 }
 
-.center-content{
-  text-align: -webkit-center;
-}
-
-.imagem{
-  max-width: 50px;
+.subtitle{
+  display: flex;
+  justify-content: center;
 }
 
 .full-width {
@@ -23,3 +26,7 @@
 .button{
   width: 100%;
 }
+
+
+
+

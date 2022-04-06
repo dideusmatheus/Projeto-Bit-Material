@@ -1,16 +1,18 @@
 {
-    "usuarios":[
-        {
-            "userName": "Matheus Rocha",
-            "userEmail": "matheus@bit.com",
-            "userPassword": "123",
-            "id": "1"
-        },
-        {
-            "userName": "Carlos Rocha",
-            "userEmail": "carlos@bit.com",
-            "userPassword": "123",
-            "id": "2"
-        }
-    ]
+  "usuarios": [
+    {
+      "userName": "Matheus Rocha",
+      "userEmail": "matheus@bit.com",
+      "userPassword": "123",
+      "userConfirmPassword": "123",
+      "id": 1
+    },
+    {
+      "userName": "Carlos Rocha",
+      "userEmail": "carlos@bit.com",
+      "userPassword": "123",
+      "userConfirmPassword": "123",
+      "id": 2
+    }
+  ]
 }

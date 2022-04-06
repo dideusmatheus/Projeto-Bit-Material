@@ -1,3 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
+import { MensagemModule } from './../mensagem/mensagem.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,8 +9,10 @@ import { HomeComponent } from './home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 
 
@@ -17,13 +21,17 @@ import { FormsModule } from '@angular/forms';
     HomeComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatTabsModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    MensagemModule,
+    HttpClientModule
 
   ],
   exports: [
