@@ -12,58 +12,87 @@
 
         <!-- parte relacionada ao login -->
         <mat-tab [formGroup]="loginForm" label="Login">
-          <mat-form-field class="full-width" appearance="fill">
+
+          <!-- input email -->
+          <mat-form-field class="inputs" appearance="outline">
             <mat-label>E-mail</mat-label>
             <input formControlName="log_Email" type="email" matInput placeholder="E-mail">
-            <app-mensagem *ngIf="loginForm.get('log_Email')?.errors?.['required'] && loginForm.get('log_Email')?.['touched']" text="E-mail necessário para fazer login!"></app-mensagem>
+            <app-mensagem
+              *ngIf="loginForm.get('log_Email')?.errors?.['required'] && loginForm.get('log_Email')?.['touched']"
+              text="E-mail necessário para fazer login!"></app-mensagem>
             <app-mensagem *ngIf="loginForm.get('log_Email')?.errors?.['email']" text="E-mail invalido!"></app-mensagem>
           </mat-form-field>
 
-          <mat-form-field class="full-width" appearance="fill">
+          <!-- input password -->
+          <mat-form-field class="inputs" appearance="outline">
             <mat-label>Senha</mat-label>
             <input formControlName="log_Password" type="password" matInput placeholder="Senha">
-            <app-mensagem *ngIf="loginForm.get('log_Password')?.errors?.['required'] && loginForm.get('log_Password')?.['touched']" text="Password necessário para fazer login!"></app-mensagem>
+            <app-mensagem
+              *ngIf="loginForm.get('log_Password')?.errors?.['required'] && loginForm.get('log_Password')?.['touched']"
+              text="Password necessário para fazer login!"></app-mensagem>
           </mat-form-field>
 
           <!-- button de login -->
-          <button class="button" [disabled]="loginForm.invalid" mat-raised-button color="primary" (click)="login()">Login</button>
+          <button class="button" [disabled]="loginForm.invalid" mat-raised-button color="primary"
+            (click)="login()">Login</button>
         </mat-tab>
 
         <!-- parte relacionada ao register -->
+
         <mat-tab [formGroup]="registrarForm" label="Registrar">
-          <mat-form-field class="full-width" appearance="fill">
+          <!-- input nome completo  -->
+          <mat-form-field class="inputs" appearance="outline">
             <mat-label>Nome Completo</mat-label>
             <input formControlName="userName" type="text" matInput placeholder="Nome completo">
-            <app-mensagem *ngIf="registrarForm.get('userName')?.errors?.['required'] && registrarForm.get('userName')?.['touched']" text="Nome completo necessário!"></app-mensagem>
-            <app-mensagem *ngIf="registrarForm.get('userName')?.errors?.['minlength']" text="Mínimo de 3 caracteres!"></app-mensagem>
-            <app-mensagem *ngIf="registrarForm.get('userName')?.errors?.['maxlength']" text="Máximo de 30 caracteres!"></app-mensagem>
+            <app-mensagem
+              *ngIf="registrarForm.get('userName')?.errors?.['required'] && registrarForm.get('userName')?.['touched']"
+              text="Nome completo necessário!"></app-mensagem>
+            <app-mensagem *ngIf="registrarForm.get('userName')?.errors?.['minlength']" text="Mínimo de 3 caracteres!">
+            </app-mensagem>
+            <app-mensagem *ngIf="registrarForm.get('userName')?.errors?.['maxlength']" text="Máximo de 30 caracteres!">
+            </app-mensagem>
           </mat-form-field>
 
-          <mat-form-field class="full-width" appearance="fill">
+          <!-- input e-mail  -->
+          <mat-form-field class="inputs" appearance="outline">
             <mat-label>E-mail</mat-label>
             <input formControlName="userEmail" type="email" matInput placeholder="E-mail">
-            <app-mensagem *ngIf="registrarForm.get('userEmail')?.errors?.['required'] && registrarForm.get('userEmail')?.['touched']" text="E-mail necessário!"></app-mensagem>
-            <app-mensagem *ngIf="registrarForm.get('userEmail')?.errors?.['email']" text="E-mail invalido!"></app-mensagem>
+            <app-mensagem
+              *ngIf="registrarForm.get('userEmail')?.errors?.['required'] && registrarForm.get('userEmail')?.['touched']"
+              text="E-mail necessário!"></app-mensagem>
+            <app-mensagem *ngIf="registrarForm.get('userEmail')?.errors?.['email']" text="E-mail invalido!">
+            </app-mensagem>
           </mat-form-field>
 
-          <mat-form-field class="full-width" appearance="fill">
+          <!-- input password  -->
+          <mat-form-field class="inputs" appearance="outline">
             <mat-label>Senha</mat-label>
             <input formControlName="userPassword" type="password" matInput placeholder="Senha">
-            <app-mensagem *ngIf="registrarForm.get('userPassword')?.errors?.['required'] && registrarForm.get('userPassword')?.['touched']" text="Senha necessário!"></app-mensagem>
-            <app-mensagem *ngIf="registrarForm.get('userPassword')?.errors?.['minlength']" text="Mínimo de 6 caracteres!"></app-mensagem>
-            <app-mensagem *ngIf="registrarForm.get('userPassword')?.errors?.['maxlength']" text="Máximo de 20 caracteres!"></app-mensagem>
+            <app-mensagem
+              *ngIf="registrarForm.get('userPassword')?.errors?.['required'] && registrarForm.get('userPassword')?.['touched']"
+              text="Senha necessário!"></app-mensagem>
+            <app-mensagem *ngIf="registrarForm.get('userPassword')?.errors?.['minlength']"
+              text="Mínimo de 6 caracteres!"></app-mensagem>
+            <app-mensagem *ngIf="registrarForm.get('userPassword')?.errors?.['maxlength']"
+              text="Máximo de 20 caracteres!"></app-mensagem>
           </mat-form-field>
 
-          <mat-form-field class="full-width" appearance="fill">
+          <!-- input confirmação de senha  -->
+          <mat-form-field class="inputs" appearance="outline">
             <mat-label>Confirmar Senha</mat-label>
             <input formControlName="userConfirmPassword" type="password" matInput placeholder="Senha">
-            <app-mensagem *ngIf="registrarForm.get('userConfirmPassword')?.errors?.['required'] && registrarForm.get('userConfirmPassword')?.['touched']" text="Confirmação da senha necessário!"></app-mensagem>
-            <app-mensagem *ngIf="registrarForm.get('userConfirmPassword')?.errors?.['minlength']" text="Mínimo de 6 caracteres!"></app-mensagem>
-            <app-mensagem *ngIf="registrarForm.get('userConfirmPassword')?.errors?.['maxlength']" text="Máximo de 20 caracteres!"></app-mensagem>
+            <app-mensagem
+              *ngIf="registrarForm.get('userConfirmPassword')?.errors?.['required'] && registrarForm.get('userConfirmPassword')?.['touched']"
+              text="Confirmação da senha necessário!"></app-mensagem>
+            <app-mensagem *ngIf="registrarForm.get('userConfirmPassword')?.errors?.['minlength']"
+              text="Mínimo de 6 caracteres!"></app-mensagem>
+            <app-mensagem *ngIf="registrarForm.get('userConfirmPassword')?.errors?.['maxlength']"
+              text="Máximo de 20 caracteres!"></app-mensagem>
           </mat-form-field>
 
           <!-- button de registro -->
-          <button  [disabled]="registrarForm.invalid" class="button" mat-raised-button color="primary" (click)="registrar()">Registrar</button>
+          <button [disabled]="registrarForm.invalid" class="button" mat-raised-button color="primary"
+            (click)="registrar()">Registrar</button>
         </mat-tab>
       </mat-tab-group>
 

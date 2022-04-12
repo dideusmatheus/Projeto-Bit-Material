@@ -1,0 +1,17 @@
+.mat-form-field{
+  width: 100%;
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+}
+
+.input{
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-register{
+  width: 30%;
+}

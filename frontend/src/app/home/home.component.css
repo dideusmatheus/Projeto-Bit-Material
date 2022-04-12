@@ -1,32 +1,35 @@
-body{
+body {
   width: 100vw;
   height: 100vh;
 }
 
 .card {
   max-width: 400px;
-  background-color: #B4B3E3;
+  background-color: #e7e9e5;
 }
 
-.title{
+.title {
   display: flex;
   justify-content: center;
 }
 
-.subtitle{
+.subtitle {
   display: flex;
   justify-content: center;
 }
 
-.full-width {
+.button {
+  width: 100%;
+}
+
+.inputs {
   margin-top: 10px;
   width: 100%;
 }
 
-.button{
-  width: 100%;
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 64px);
 }
-
-
-
-

@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private authService: AutenticacaoService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -48,6 +49,8 @@ export class HomeComponent implements OnInit {
           if (user[0].userPassword == userPassword) {
             console.log('Usuário logado com sucesso!');
             alert('Usuário logado com sucesso!');
+            this.router.navigate(['crud']);
+
           } else
             if (user[0].userPassword != userPassword) {
               console.log('Senha invalida!');
@@ -77,6 +80,7 @@ export class HomeComponent implements OnInit {
       this.authService.registrarAuth(newUser).subscribe({
         next: () => {
           alert('Usuário Registrado!');
+          this.registrarForm.reset();
         },
         error: err => {
           alert('Erro!');

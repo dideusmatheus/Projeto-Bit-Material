@@ -1,0 +1,37 @@
+<mat-toolbar>
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Projeto Material</span>
+  <span class="example-spacer"></span>
+
+
+  <button mat-icon-button class="buttons">
+    <!-- button -->
+      <div class="button-container">
+      <button mat-mini-fab (click)="openDialog()">
+        <mat-icon>person_add_alt</mat-icon>
+      </button>
+    </div>
+  </button>
+
+  <button mat-icon-button class="buttons">
+    <!-- button -->
+      <div class="button-container">
+      <button mat-mini-fab (click)="userTable()">
+        <mat-icon>table_rows</mat-icon>
+      </button>
+    </div>
+  </button>
+
+  <button mat-icon-button class="buttons">
+    <!-- button -->
+      <div class="button-container">
+      <button mat-mini-fab (click)="login()">
+        <mat-icon>login</mat-icon>
+      </button>
+    </div>
+  </button>
+
+
+</mat-toolbar>
