@@ -1,3 +1,4 @@
+import { UpdateCrudModule } from './update-crud/update-crud.module';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,6 +17,7 @@ import { CrudComponent } from './crud.component';
     CommonModule,
     CreateCrudModule,
     ReadCrudModule,
+    UpdateCrudModule
   ],
   exports: [
     CreateCrudComponent

@@ -31,8 +31,8 @@ export class CrudService {
   }
 
   //metodo update
-  update(userId: any, data: Usuario){
-    return this.httpClient.put(`${API}/usuarios/${userId}`, data)
+  update(user: any, data: any){
+    return this.httpClient.put(`${API}/usuarios/${user}`, data)
       .pipe(map((res: any)=> {
         return res
       }))

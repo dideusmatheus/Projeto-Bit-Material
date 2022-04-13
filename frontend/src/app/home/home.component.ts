@@ -81,6 +81,7 @@ export class HomeComponent implements OnInit {
         next: () => {
           alert('Usuário Registrado!');
           this.registrarForm.reset();
+          this.authService.atualizarComponente();
         },
         error: err => {
           alert('Erro!');

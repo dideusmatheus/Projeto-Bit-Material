@@ -1,0 +1,62 @@
+<h1 mat-dialog-title class="title">Editar usuário</h1>
+<div mat-dialog-content [formGroup]="updateForm">
+
+  <!-- input userName -->
+  <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Nome completo</mat-label>
+    <input matInput formControlName="userName" type="text">
+    <mat-icon matSuffix>person</mat-icon>
+    <app-mensagem *ngIf="updateForm.get('userName')?.errors?.['required'] && updateForm.get('userName')?.['touched']" text="Nome completo necessário!">
+    </app-mensagem>
+    <app-mensagem *ngIf="updateForm.get('userName')?.errors?.['minlength']" text="Mínimo de 3 caracteres!">
+    </app-mensagem>
+    <app-mensagem *ngIf="updateForm.get('userName')?.errors?.['maxlength']" text="Máximo de 30 caracteres!">
+    </app-mensagem>
+  </mat-form-field>
+
+  <!-- input userName -->
+  <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input matInput matInput formControlName="userEmail" type="email">
+    <app-mensagem *ngIf="updateForm.get('userEmail')?.errors?.['required'] && updateForm.get('userEmail')?.['touched']" text="E-mail necessário!">
+    </app-mensagem>
+    <app-mensagem *ngIf="updateForm.get('userEmail')?.errors?.['email']" text="E-mail invalido!">
+    </app-mensagem>
+    <mat-icon matSuffix>contact_mail</mat-icon>
+  </mat-form-field>
+
+  <!-- input userName -->
+  <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Senha</mat-label>
+    <input matInput matInput formControlName="userPassword" type="password">
+    <mat-icon matSuffix>key</mat-icon>
+    <app-mensagem *ngIf="updateForm.get('userPassword')?.errors?.['required'] && updateForm.get('userPassword')?.['touched']" text="Nome completo necessário!">
+    </app-mensagem>
+    <app-mensagem *ngIf="updateForm.get('userPassword')?.errors?.['minlength']" text="Mínimo de 6 caracteres!">
+    </app-mensagem>
+    <app-mensagem *ngIf="updateForm.get('userPassword')?.errors?.['maxlength']" text="Máximo de 20 caracteres!">
+    </app-mensagem>
+  </mat-form-field>
+
+  <!-- input userName -->
+  <mat-form-field class="mat-form-field" appearance="outline">
+    <mat-label>Confirmar senha</mat-label>
+    <input matInput matInput formControlName="userConfirmPassword" type="password">
+    <mat-icon matSuffix>key_off</mat-icon>
+    <app-mensagem *ngIf="updateForm.get('userConfirmPassword')?.errors?.['required'] && updateForm.get('userConfirmPassword')?.['touched']" text="Nome completo necessário!">
+    </app-mensagem>
+    <app-mensagem *ngIf="updateForm.get('userConfirmPassword')?.errors?.['minlength']" text="Mínimo de 6 caracteres!">
+    </app-mensagem>
+    <app-mensagem *ngIf="updateForm.get('userConfirmPassword')?.errors?.['maxlength']" text="Máximo de 20 caracteres!">
+    </app-mensagem>
+  </mat-form-field>
+
+  <!-- button -->
+  <div class="input">
+    <button [disabled]="updateForm.invalid" class="input-register" mat-raised-button
+      color="primary" (click)="atualizar()">Atualizar</button>
+    <button class="input-register" mat-raised-button color="accent" mat-dialog-close>Cancelar</button>
+  </div>
+
+
+</div>

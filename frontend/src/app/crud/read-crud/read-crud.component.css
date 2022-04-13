@@ -1,5 +1,6 @@
 .table {
   padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .table1 {
@@ -44,7 +45,6 @@ th {
   color: white;
 }
 
-
 /* .button-edit{
   margin-right: 4px;
   background-color: rgba(255, 255, 0, 0.774);
@@ -66,7 +66,9 @@ th {
   box-shadow: 0 9px rgb(216, 215, 215);
 }
 
-.button-edit:hover {background-color: #3aa13d}
+.button-edit:hover {
+  background-color: #3aa13d;
+}
 
 .button-edit:active {
   background-color: #fffb00;
@@ -94,7 +96,9 @@ th {
   box-shadow: 0 9px rgb(216, 215, 215);
 }
 
-.button-delete:hover {background-color: #3aa13d}
+.button-delete:hover {
+  background-color: #3aa13d;
+}
 
 .button-delete:active {
   background-color: #ff0000;
@@ -102,3 +106,16 @@ th {
   transform: translateY(4px);
 }
 
+.title-dialog{
+  display: flex;
+  justify-content: center;
+}
+
+.button-dialog{
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttonD{
+  width: 40%;
+}

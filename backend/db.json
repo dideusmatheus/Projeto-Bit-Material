@@ -22,25 +22,18 @@
       "id": 3
     },
     {
-      "userName": "danielee",
+      "userName": "danielleeeeee",
       "userEmail": "dani@meajuda.com",
       "userPassword": "123456",
       "userConfirmPassword": "123456",
       "id": 4
     },
     {
-      "userName": "sei la quem",
-      "userEmail": "testte@gmail.com",
+      "userName": "Matheus De Deus Rocha",
+      "userEmail": "matheus.rocha@bit.com.br",
       "userPassword": "123456",
       "userConfirmPassword": "123456",
-      "id": 5
-    },
-    {
-      "userName": "maheus",
-      "userEmail": "mtheusfgd@gmail.com",
-      "userPassword": "123456",
-      "userConfirmPassword": "123456",
-      "id": 6
+      "id": 7
     }
   ]
 }

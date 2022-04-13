@@ -42,6 +42,7 @@ export class CreateCrudComponent implements OnInit {
         next: () => {
           alert('Usuário Registrado!');
           this.novoUsuarioForm.reset();
+          this.authService.atualizarComponente();
         },
         error: err => {
           alert('Erro!');
