@@ -1,3 +1,4 @@
+import { SnackbarModule } from './snackbar/snackbar.module';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,7 @@ import { CrudModule } from './crud/crud.module';
 @NgModule({
   declarations: [
     AppComponent
+
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,9 @@ import { CrudModule } from './crud/crud.module';
     BrowserAnimationsModule,
     HomeModule,
     HeaderModule,
-    CrudModule
+    CrudModule,
+    SnackbarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

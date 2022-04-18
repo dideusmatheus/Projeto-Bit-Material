@@ -15,3 +15,18 @@ body {
     rgba(189, 80, 252, 1) 91%
   );
 }
+
+.alert-red{
+  background-color: red;
+  color: white;
+}
+
+.alert-green{
+  background-color: #00cc00;
+  color: white;
+}
+
+.alert-warning{
+  background-color: yellow;
+  color: black;
+}

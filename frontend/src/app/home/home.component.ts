@@ -1,3 +1,4 @@
+import { SnackbarService } from './../snackbar/snack-bar.service';
 import { Usuario } from './usuario';
 import { AutenticacaoService } from './../autenticacao/autenticacao.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private authService: AutenticacaoService,
-    private router: Router
+    private router: Router,
+    private snackbar: SnackbarService
   ) { }
 
   ngOnInit() {
@@ -43,23 +45,19 @@ export class HomeComponent implements OnInit {
     this.authService.loginAuth(userEmail).subscribe({
       next: (user) => {
         if (user.length == 0) {
-          console.log('Usuário não encontrado!');
-          alert('Usuário não encontrado!');
+          this.snackbar.addWarning('Usuário não encontrado!');
         } else
           if (user[0].userPassword == userPassword) {
-            console.log('Usuário logado com sucesso!');
-            alert('Usuário logado com sucesso!');
+            this.snackbar.addSuccess('Usuário logado com sucesso!');
             this.router.navigate(['crud']);
 
           } else
             if (user[0].userPassword != userPassword) {
-              console.log('Senha invalida!');
-              alert('Senha invalida!');
+              this.snackbar.addWarning('Senha invalida!');
             }
       },
       error: err => {
-        alert('Error!');
-        console.log(err);
+        this.snackbar.addError(err);
       }
 
     })
@@ -79,20 +77,18 @@ export class HomeComponent implements OnInit {
     if (newUser.userPassword === newUser.userConfirmPassword) {
       this.authService.registrarAuth(newUser).subscribe({
         next: () => {
-          alert('Usuário Registrado!');
+          this.snackbar.addSuccess('Usuário Registrado!');
           this.registrarForm.reset();
           this.authService.atualizarComponente();
         },
         error: err => {
-          alert('Erro!');
-          console.log(err);
+          this.snackbar.addError(err);
         }
 
       });
       return
     }
-    alert('Senha e confimarção de senha incorretas!!');
-
+    this.snackbar.addWarning('Senha e confimarção de senha incorretas!!');
   }//fim da função registrar
 
 }

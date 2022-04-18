@@ -1,7 +1,9 @@
+
 import { Router } from '@angular/router';
 import { AutenticacaoService } from './../../autenticacao/autenticacao.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { SnackbarService } from 'src/app/snackbar/snack-bar.service';
 
 @Component({
   selector: 'app-create-crud',
@@ -14,7 +16,7 @@ export class CreateCrudComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private authService: AutenticacaoService,
-    private router: Router
+    private snackBar: SnackbarService
     ) { }
 
   ngOnInit() {
@@ -40,19 +42,22 @@ export class CreateCrudComponent implements OnInit {
     if (newUser.userPassword === newUser.userConfirmPassword) {
       this.authService.registrarAuth(newUser).subscribe({
         next: () => {
-          alert('Usuário Registrado!');
+          this.snackBar.addSuccess('Usuario registrado!!')
+          //alert('Usuário Registrado!');
           this.novoUsuarioForm.reset();
           this.authService.atualizarComponente();
         },
         error: err => {
-          alert('Erro!');
+          this.snackBar.addError('Erro!')
+         // alert('Erro!');
           console.log(err);
         }
 
       });
       return
     }
-    alert('Senha e confimarção de senha incorretas!!');
+    this.snackBar.addError('Senha e confimarção de senha incorretas!!');
+    //alert('Senha e confimarção de senha incorretas!!');
 
   }//fim da função registrar
 

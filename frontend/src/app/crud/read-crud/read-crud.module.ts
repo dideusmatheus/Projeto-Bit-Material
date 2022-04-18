@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 
 
+
 @NgModule({
   declarations: [
     ReadCrudComponent
@@ -27,8 +28,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatSortModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
-
+    MatButtonModule,
   ],
   exports: [
     ReadCrudComponent

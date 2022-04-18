@@ -1,18 +1,15 @@
+import { SnackbarService } from 'src/app/snackbar/snack-bar.service';
 import { AutenticacaoService } from './../../autenticacao/autenticacao.service';
 import { Router } from '@angular/router';
 import { StorageService } from './../../autenticacao/session-storage/storage.service';
-
 import { UpdateCrudComponent } from './../update-crud/update-crud.component';
-
 import { CrudService } from './../crud.service';
-
 import { Component, OnInit, ViewChild } from '@angular/core';
-
-
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+
 
 
 
@@ -36,12 +33,12 @@ export class ReadCrudComponent implements OnInit {
     private dialog: MatDialog,
     private storageService: StorageService,
     private router: Router,
-    private authService: AutenticacaoService) { }
+    private authService: AutenticacaoService,
+    private snackbar: SnackbarService
+  ) { }
 
   ngOnInit(): void {
     this.getAllUsers();
-
-
   }
 
   getAllUsers() {
@@ -54,7 +51,7 @@ export class ReadCrudComponent implements OnInit {
         this.dataSource.sort = this.sort;
       },
       error: (err) => {
-        alert(err);
+        this.snackbar.addError(err);
       }
     })
   }
@@ -70,7 +67,7 @@ export class ReadCrudComponent implements OnInit {
 
   editarUser(user: any) {
     this.dialog.open(UpdateCrudComponent, {
-      width: '50%'
+      width: '50%',
     })
 
     this.storageService.save("dadosUser", user);
@@ -84,7 +81,8 @@ export class ReadCrudComponent implements OnInit {
 
   deletarUser(userId: any) {
     this.crudService.delete(userId).subscribe(() => {
-      alert('Usuario deletado com sucesso!');
+      this.snackbar.addSuccess('Usuario deletado com sucesso!')
+      //alert('Usuario deletado com sucesso!');
       this.router.navigate(['crud']);
       this.authService.atualizarComponente();
       this.dialog.closeAll();
@@ -95,8 +93,6 @@ export class ReadCrudComponent implements OnInit {
   cancel() {
     this.dialog.closeAll();
   }
-
-
 
 }
 

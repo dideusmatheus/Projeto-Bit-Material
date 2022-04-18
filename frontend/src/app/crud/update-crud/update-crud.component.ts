@@ -1,10 +1,14 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { SnackbarService } from 'src/app/snackbar/snack-bar.service';
+
+
+
 import { StorageService } from './../../autenticacao/session-storage/storage.service';
 import { Usuario } from './../../home/usuario';
 import { AutenticacaoService } from './../../autenticacao/autenticacao.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../crud.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,7 +26,9 @@ export class UpdateCrudComponent implements OnInit {
     private sessionService: StorageService,
     private crudService: CrudService,
     private router: Router,
-    private authService: AutenticacaoService) { }
+    private authService: AutenticacaoService,
+    private snackBar: SnackbarService
+  ) { }
 
   ngOnInit() {
 
@@ -44,10 +50,9 @@ export class UpdateCrudComponent implements OnInit {
   atualizar() {
     const data = this.updateForm.getRawValue();
     const dadosAntigos = this.sessionService.get('dadosUser');
-    //console.log(dadosAntigos.id);
 
-    this.crudService.update(dadosAntigos.id, data).subscribe(()=>{
-      alert('Usuario atualizado!');
+    this.crudService.update(dadosAntigos.id, data).subscribe(() => {
+      this.snackBar.addSuccess('Usuário atualizado!');
       this.router.navigate(['crud']);
       this.authService.atualizarComponente();
     })
